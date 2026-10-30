@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>MedBay Plus (concept)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..600;1,6..72,200..600&family=DM+Sans:opsz,wght@9..40,300..600&display=swap">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%23f8f3ec'/%3E%3Cpath d='M16 8V24M22.93 12 9.07 20M9.07 12 22.93 20' stroke='%23c9a25e' stroke-width='2.4' stroke-linecap='round'/%3E%3C/svg%3E">
+<style>
+:root{--cream:#f8f3ec;--sand:#f1ebe1;--ink:#1a1f2e;--navy:#0b1f33;--muted:#6b6f78;--gold:#c9a25e;--gold-ink:#86662c;--line:#e2d9ca;
+--display:"Newsreader",Georgia,serif;--body:"DM Sans",system-ui,sans-serif;--pad:clamp(24px,6vw,96px)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{background:var(--cream);color:var(--ink);font:300 16px/1.6 var(--body);-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+button,input{font:inherit;color:inherit}
+.wrap{width:min(1180px,100%);margin:0 auto;padding:0 var(--pad)}
+.label{font:500 11px/1 var(--body);letter-spacing:.28em;text-transform:uppercase;color:var(--muted)}
+
+/* nav */
+header{position:absolute;inset:0 0 auto;z-index:5}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:88px}
+.brand{display:flex;align-items:center;gap:9px;color:var(--ink)}
+.brand .mark{width:22px;height:22px}
+.brand .word{height:16px;width:auto}
+.brand .plus{font:italic 300 19px/1 var(--display);color:var(--gold-ink);margin-left:-1px}
+.nav-r{display:flex;align-items:center;gap:28px}
+.concept{font:500 10px/1 var(--body);letter-spacing:.24em;text-transform:uppercase;color:var(--muted)}
+.link{font-size:14px;font-weight:400;border-bottom:1px solid currentColor;padding-bottom:3px}
+
+/* hero */
+.hero{min-height:100svh;display:flex;flex-direction:column;justify-content:center;padding:140px 0 80px}
+.hero-mark{width:44px;height:44px;margin-bottom:44px}
+.hero-mark path{stroke:var(--gold);stroke-width:1.6;stroke-linecap:round;fill:none}
+h1{font:300 clamp(46px,8vw,112px)/1.02 var(--display);letter-spacing:-.025em;max-width:11ch}
+h1 em{font-style:italic}
+.hero p{margin-top:32px;font-size:clamp(16px,1.4vw,18px);color:var(--muted);max-width:34ch}
+.cta{display:inline-flex;align-items:center;justify-content:center;gap:14px;min-height:56px;padding:0 30px;margin-top:48px;border-radius:999px;background:var(--navy);color:#f8f3ec;font-size:15px;font-weight:400;letter-spacing:.01em;border:0;cursor:pointer;transition:background .4s}
+.cta:hover{background:#15314c}
+.cta svg{width:16px;height:16px;transition:transform .5s cubic-bezier(.16,1,.3,1)}
+.cta:hover svg{transform:translateX(4px)}
+
+/* sections */
+section.s{padding:clamp(100px,14vw,200px) 0;border-top:1px solid var(--line)}
+.s-grid{display:grid;grid-template-columns:1fr 2fr;gap:40px}
+h2{font:300 clamp(30px,3.6vw,46px)/1.1 var(--display);letter-spacing:-.015em;margin-top:22px}
+
+/* journey */
+.journey{position:relative;list-style:none}
+.journey .rule{position:absolute;left:0;top:0;width:1px;height:100%;overflow:visible}
+.journey .rule line{stroke:var(--gold);stroke-width:1}
+.journey li{display:grid;grid-template-columns:64px 1fr;align-items:baseline;padding:26px 0 26px 28px;border-bottom:1px solid var(--line)}
+.journey li:first-of-type{padding-top:4px}
+.journey .n{font:italic 300 18px/1 var(--display);color:var(--gold-ink)}
+.journey .t{font:300 clamp(22px,2.3vw,30px)/1.25 var(--display);letter-spacing:-.01em}
+
+/* signatures */
+.sig{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:0 48px}
+.sig li{padding:24px 0;border-bottom:1px solid var(--line);font:300 clamp(20px,1.9vw,24px)/1.3 var(--display)}
+
+/* quiet statement */
+.quiet{background:var(--navy);color:#f1ebe1;border-top:0!important;text-align:center}
+.quiet .label{color:rgba(241,235,225,.55)}
+.quiet p.big{font:300 clamp(30px,4.6vw,60px)/1.12 var(--display);letter-spacing:-.02em;margin:28px auto 0;max-width:18ch}
+.quiet em{font-style:italic;color:var(--gold)}
+
+/* consult */
+.consult{text-align:center}
+.consult h2{margin:22px auto 0;max-width:16ch}
+.consult .cta{margin-top:44px}
+.alt{display:block;margin-top:22px;font-size:14px;color:var(--muted)}
+.alt a{border-bottom:1px solid currentColor;padding-bottom:2px}
+form{display:none;max-width:420px;margin:44px auto 0;text-align:left;gap:16px}
+form.open{display:grid}
+form label{display:grid;gap:8px;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);font-weight:500}
+form input{min-height:54px;padding:0 2px;border:0;border-bottom:1px solid #cfc4b1;background:transparent;font-size:17px;letter-spacing:0;text-transform:none;color:var(--ink);border-radius:0}
+form input:focus{outline:none;border-color:var(--ink)}
+form .cta{width:100%;margin-top:14px}
+.done{display:none;margin-top:36px;font:300 22px/1.4 var(--display)}
+.done.show{display:block}
+
+footer{padding:56px 0 64px;border-top:1px solid var(--line);font-size:12.5px;color:var(--muted)}
+footer .wrap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
+
+@media (max-width:820px){
+  .s-grid{grid-template-columns:1fr;gap:36px}
+  .sig{grid-template-columns:1fr}
+  .nav-r .link{display:none}
+  .hero{justify-content:flex-end;padding-bottom:72px}
+  .hero .cta{width:100%}
+  .consult .cta{width:100%}
+  .journey li{grid-template-columns:44px 1fr;padding-left:22px}
+}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <a class="brand" href="#top" aria-label="MedBay Plus">
+    <svg class="mark" viewBox="0 0 32 32"><path d="M16 8V24M22.93 12 9.07 20M9.07 12 22.93 20" stroke="#c9a25e" stroke-width="2.4" stroke-linecap="round" fill="none"/></svg>
+    <svg class="word" viewBox="23 58 705 186" aria-hidden="true"><g fill="currentColor" fill-opacity="1" transform="translate(-349.46051,-280.5)" style="fill:currentColor;fill-opacity:1"> <g transform="translate(360.07088,481.875)" style="fill:currentColor;fill-opacity:1"> <g style="fill:currentColor;fill-opacity:1"> <path d="m 12.40625,-103.8125 h 25.1875 v 14.15625 c 9.050781,-10.86328 19.859375,-16.29688 32.421875,-16.29688 13.28125,0 23.015625,5.4336 29.203125,16.29688 9.05078,-10.86328 19.56641,-16.29688 31.54687,-16.29688 7.03125,0 13.09766,1.32032 18.20313,3.95313 5.11328,2.636719 9.03516,6.496094 11.76562,11.578125 2.73829,5.074219 4.10938,13.078125 4.10938,24.015625 V 0 h -27.4375 v -59.1875 c 0,-11.195312 -1.25781,-18.289062 -3.76563,-21.28125 -2.5,-3 -6.13281,-4.5 -10.89062,-4.5 -3.83594,0 -7.41406,1.15625 -10.73437,3.46875 -3.32422,2.3125 -5.75,5.75 -7.28125,10.3125 -1.53125,4.554688 -2.29688,11.679688 -2.29688,21.375 V 0 H 75 v -56.84375 c 0,-10.082031 -0.507812,-16.585938 -1.515625,-19.515625 -1.011719,-2.9375 -2.511719,-5.101563 -4.5,-6.5 -1.980469,-1.40625 -4.761719,-2.109375 -8.34375,-2.109375 -4.292969,0 -8.101563,1.125 -11.421875,3.375 -3.324219,2.25 -5.71875,5.507812 -7.1875,9.765625 -1.460938,4.261719 -2.1875,11.40625 -2.1875,21.4375 V 0 h -27.4375 z m 0,0" style="fill:currentColor;fill-opacity:1" /> </g> </g> </g> <g fill="currentColor" fill-opacity="1" transform="translate(-349.46051,-280.5)" style="fill:currentColor;fill-opacity:1"> <g transform="translate(530.69845,481.875)" style="fill:currentColor;fill-opacity:1"> <g style="fill:currentColor;fill-opacity:1"> <path d="m 74.421875,-33.015625 27.343755,4.59375 C 94.398438,-7.847656 79.359375,2.4375 56.640625,2.4375 c -16.210937,0 -28.625,-4.816406 -37.25,-14.453125 -8.625,-9.632813 -12.9375,-22.625 -12.9375,-38.96875 0,-17.1875 4.488281,-30.644531 13.46875,-40.375 C 28.910156,-101.08594 40.269531,-105.95313 54,-105.95313 c 15.300781,0 27.328125,4.98047 36.078125,14.937505 8.757813,9.960937 13.140625,24.734375 13.140625,44.328125 v 2.640625 H 34.375 c 0.257812,8.136719 2.488281,14.484375 6.6875,19.046875 4.195312,4.554688 9.519531,6.828125 15.96875,6.828125 8.726562,0 14.523438,-4.945313 17.390625,-14.84375 z m 1.5625,-27.828125 c -0.261719,-7.8125 -2.328125,-13.785156 -6.203125,-17.921875 -3.875,-4.132813 -8.617188,-6.203125 -14.21875,-6.203125 -5.992188,0 -10.921875,2.152344 -14.796875,6.453125 -3.867187,4.292969 -5.796875,9.953125 -5.796875,16.984375 v 0.6875 z m 0,0" style="fill:currentColor;fill-opacity:1" /> </g> </g> </g> <g fill="currentColor" fill-opacity="1" transform="translate(-349.46051,-280.5)" style="fill:currentColor;fill-opacity:1"> <g transform="translate(634.72614,481.875)" style="fill:currentColor;fill-opacity:1"> <g style="fill:currentColor;fill-opacity:1"> <path d="M 109.375,0 H 83.984375 V -15.234375 C 79.753906,-9.378906 74.757812,-4.96875 69,-2 63.238281,0.957031 57.425781,2.4375 51.5625,2.4375 39.582031,2.4375 29.359375,-2.363281 20.890625,-11.96875 12.429688,-21.570312 8.203125,-35 8.203125,-52.25 c 0,-17.570312 4.132813,-30.914062 12.40625,-40.03125 8.269531,-9.11328 18.71875,-13.67188 31.34375,-13.67188 11.65625,0 21.679687,4.78125 30.078125,14.343755 V -143.17187 H 109.375 Z M 36.234375,-54.203125 c 0,12.4375 2.113281,21.34375 6.34375,26.71875 4.226563,5.367187 9.828125,8.046875 16.796875,8.046875 6.3125,0 11.695312,-2.648438 16.15625,-7.953125 4.46875,-5.3125 6.703125,-13.304687 6.703125,-23.984375 0,-12.039062 -2.167969,-20.648438 -6.5,-25.828125 -4.335937,-5.175781 -9.851563,-7.765625 -16.546875,-7.765625 -6.511719,0 -11.964844,2.558594 -16.359375,7.671875 -4.398437,5.117187 -6.59375,12.8125 -6.59375,23.09375 z m 0,0" style="fill:currentColor;fill-opacity:1" /> </g> </g> </g> <g fill="currentColor" fill-opacity="1" transform="translate(-349.46051,-280.5)" style="fill:currentColor;fill-opacity:1"> <g transform="translate(749.69105,481.875)" style="fill:currentColor;fill-opacity:1"> <g style="fill:currentColor;fill-opacity:1"> <path d="M 13.1875,0 V -143.17187 H 40.625 v 51.562495 c 8.53125,-9.562505 18.585938,-14.343755 30.171875,-14.343755 12.570313,0 22.972656,4.5586 31.203125,13.67188 8.23828,9.117188 12.35938,22.199219 12.35938,39.25 0,17.773438 -4.20313,31.460938 -12.60938,41.0625 C 93.351562,-2.363281 83.101562,2.4375 71,2.4375 65.132812,2.4375 59.335938,0.925781 53.609375,-2.09375 47.878906,-5.125 42.867188,-9.503906 38.578125,-15.234375 V 0 Z m 27.25,-54.203125 c 0,11.71875 2.242188,20.445313 6.734375,26.171875 4.488281,5.730469 10.21875,8.59375 17.1875,8.59375 6.1875,0 11.410156,-2.550781 15.671875,-7.65625 4.257812,-5.113281 6.390625,-13.269531 6.390625,-24.46875 0,-11.914062 -2.167969,-20.460938 -6.5,-25.640625 -4.324219,-5.175781 -9.839844,-7.765625 -16.546875,-7.765625 -6.511719,0 -11.964844,2.527344 -16.359375,7.578125 -4.386719,5.042969 -6.578125,12.773437 -6.578125,23.1875 z m 0,0" style="fill:currentColor;fill-opacity:1" /> </g> </g> </g> <g fill="currentColor" fill-opacity="1" transform="translate(-349.46051,-280.5)" style="fill:currentColor;fill-opacity:1"> <g transform="translate(864.65597,481.875)" style="fill:currentColor;fill-opacity:1"> <g style="fill:currentColor;fill-opacity:1"> <path d="M 34.765625,-71.96875 9.96875,-76.5625 C 12.757812,-86.59375 17.554688,-94 24.359375,-98.78125 c 6.8125,-4.78125 16.953125,-7.17188 30.421875,-7.17188 12.3125,0 21.460938,1.4336 27.453125,4.29688 5.988281,2.867188 10.21875,6.527344 12.6875,10.984375 2.476563,4.460937 3.71875,12.609375 3.71875,24.453125 L 98.25,-33.984375 c 0,9.054687 0.421875,15.746094 1.265625,20.078125 C 100.35938,-9.582031 101.98438,-4.945312 104.39063,0 H 77.4375 C 76.726562,-1.5625 76,-3.742188 75.25,-6.546875 c -0.75,-2.800781 -1.226562,-4.425781 -1.421875,-4.875 -9.5,9.242187 -20.242187,13.859375 -32.21875,13.859375 -10.679687,0 -19.078125,-2.910156 -25.203125,-8.734375 -6.117188,-5.832031 -9.171875,-13.207031 -9.171875,-22.125 0,-5.851563 1.394531,-11.039063 4.1875,-15.5625 2.800781,-4.53125 6.691406,-8.03125 11.671875,-10.5 4.976562,-2.476563 12.285156,-4.660156 21.921875,-6.546875 12.757813,-2.414062 21.613281,-4.597656 26.5625,-6.546875 v -2.828125 c 0,-5.34375 -1.304687,-9.101562 -3.90625,-11.28125 -2.605469,-2.1875 -7.484375,-3.28125 -14.640625,-3.28125 -4.949219,0 -8.792969,0.964844 -11.53125,2.890625 -2.730469,1.917969 -4.976562,5.289063 -6.734375,10.109375 z m 36.8125,22.15625 c -3.449219,1.179688 -9.015625,2.578125 -16.703125,4.203125 -7.679688,1.625 -12.621094,3.21875 -14.828125,4.78125 -3.648437,2.542969 -5.46875,5.765625 -5.46875,9.671875 0,3.84375 1.429687,7.167969 4.296875,9.96875 2.863281,2.792969 6.507812,4.1875 10.9375,4.1875 3.050781,0 6.023438,-0.613281 8.921875,-1.84375 2.90625,-1.238281 5.347656,-2.816406 7.328125,-4.734375 1.988281,-1.925781 3.40625,-4.09375 4.25,-6.5 0.84375,-2.40625 1.265625,-7.191406 1.265625,-14.359375 z m 0,0" style="fill:currentColor;fill-opacity:1" /> </g> </g> </g> <g fill="currentColor" fill-opacity="1" transform="translate(-349.46051,-280.5)" style="fill:currentColor;fill-opacity:1"> <g transform="translate(968.68362,481.875)" style="fill:currentColor;fill-opacity:1"> <g style="fill:currentColor;fill-opacity:1"> <path d="M 1.375,-103.8125 H 30.5625 L 55.375,-29.984375 79.59375,-103.8125 h 28.42188 L 64.84375,14.15625 c -3.125,7.8125 -6.335938,13.554688 -9.625,17.234375 -3.28125,3.6875 -7.335938,6.375 -12.15625,8.0625 C 38.25,41.148438 32.554688,42 25.984375,42 c -5.34375,0 -10.554687,-0.523438 -15.625,-1.5625 L 8.015625,19.046875 c 4.226563,0.78125 8.097656,1.171875 11.609375,1.171875 6.382812,0 11.101562,-1.875 14.15625,-5.625 3.0625,-3.742188 5.410156,-8.539062 7.046875,-14.390625 z m 0,0" style="fill:currentColor;fill-opacity:1" /> </g> </g> </g> </svg>
+    <span class="plus">plus</span>
+  </a>
+  <div class="nav-r"><span class="concept">Concept</span><a class="link" href="#consult">Enquire</a></div>
+</div></header>
+
+<main id="top">
+<section class="hero"><div class="wrap">
+  <svg class="hero-mark" viewBox="0 0 44 44" aria-hidden="true"><path d="M22 6V38"/><path d="M35.86 14 8.14 30"/><path d="M8.14 14 35.86 30"/></svg>
+  <h1 id="headline">Care, without lifting <em>a&nbsp;finger.</em></h1>
+  <p id="sub">A private medical office in Malaysia. One team, every detail.</p>
+  <a class="cta" id="heroCta" href="#consult">Request a consultation <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 12h16M14 6l6 6-6 6"/></svg></a>
+</div></section>
+
+<section class="s" id="journey"><div class="wrap s-grid">
+  <div><div class="label">The journey</div><h2>Arrive. We handle the rest.</h2></div>
+  <ol class="journey" id="journeyList">
+    <svg class="rule" preserveAspectRatio="none" aria-hidden="true"><line id="ruleLine" x1="0.5" y1="0" x2="0.5" y2="100%"/></svg>
+    <li><span class="n">i</span><span class="t">Cleared at home, before you fly.</span></li>
+    <li><span class="n">ii</span><span class="t">Met on arrival.</span></li>
+    <li><span class="n">iii</span><span class="t">A quiet suite, already briefed.</span></li>
+    <li><span class="n">iv</span><span class="t">Accompanied to your procedure.</span></li>
+    <li><span class="n">v</span><span class="t">Recovery, somewhere beautiful.</span></li>
+  </ol>
+</div></section>
+
+<section class="s"><div class="wrap s-grid">
+  <div><div class="label">On request</div><h2>Quietly covered.</h2></div>
+  <ul class="sig" id="sigList">
+    <li>Air ambulance on standby</li>
+    <li>A medical escort home</li>
+    <li>Your records, kept privately</li>
+    <li>An annual membership</li>
+  </ul>
+</div></section>
+
+<section class="s quiet"><div class="wrap">
+  <div class="label">Discretion</div>
+  <p class="big" id="quietLine">Your name stays <em>with your doctor.</em></p>
+</div></section>
+
+<section class="s consult" id="consult"><div class="wrap">
+  <div class="label">Begin</div>
+  <h2>A private conversation, first.</h2>
+  <button class="cta" id="openForm" type="button">Request a consultation <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 12h16M14 6l6 6-6 6"/></svg></button>
+  <form id="form" novalidate>
+    <label>Name<input name="name" autocomplete="name"></label>
+    <label>WhatsApp<input name="tel" type="tel" inputmode="tel" autocomplete="tel"></label>
+    <button class="cta" type="submit">Send</button>
+  </form>
+  <p class="done" id="done">Thank you. (Concept page, nothing was sent.)</p>
+  <span class="alt">or <a href="#consult" id="wa">message us on WhatsApp</a></span>
+</div></section>
+</main>
+
+<footer><div class="wrap">
+  <span>MedBay Plus, a concept by MedBay.</span>
+  <span>Concept preview. Not a live service.</span>
+</div></footer>
+
+<script type="module">
+import { animate, createTimeline, stagger, splitText, svg, onScroll, spring } from './vendor/anime.esm.min.js';
+const RM = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* mock form (works with or without motion) */
+const form=document.getElementById('form'),open=document.getElementById('openForm'),done=document.getElementById('done');
+open.addEventListener('click',()=>{open.style.display='none';form.classList.add('open');form.querySelector('input').focus({preventScroll:true});
+  if(!RM)animate(form.children,{opacity:[0,1],y:[12,0],delay:stagger(70),duration:700,ease:'out(3)'})});
+form.addEventListener('submit',e=>{e.preventDefault();form.classList.remove('open');done.classList.add('show')});
+document.getElementById('wa').addEventListener('click',e=>{e.preventDefault();done.textContent='In the live service this opens a WhatsApp chat. (Concept page.)';done.classList.add('show')});
+
+if(!RM){
+  /* Motion 1: hero entrance. Anime.js timeline + createDrawable + splitText lines.
+     Container first, then text (the post's "separate container motion from text motion"). */
+  const { lines } = splitText('#headline', { lines: { wrap: 'clip' } });
+  const mark = svg.createDrawable('.hero-mark path');
+  createTimeline({ defaults: { ease: 'out(4)' } })
+    .add(mark, { draw: ['0 0', '0 1'], duration: 1400, delay: stagger(160) }, 0)
+    .add(lines, { y: ['105%', '0%'], duration: 1300, delay: stagger(110), ease: spring({ bounce: 0, duration: 1100 }) }, 350)
+    .add(['#sub', '#heroCta'], { opacity: [0, 1], y: [10, 0], duration: 1000, delay: stagger(140) }, 900);
+
+  /* Motion 2: journey hairline draws with scroll (onScroll sync), steps settle in once. */
+  const rule = svg.createDrawable('#ruleLine');
+  animate(rule, { draw: ['0 0', '0 1'], ease: 'linear',
+    autoplay: onScroll({ target: '#journeyList', enter: 'bottom top', leave: 'center bottom', sync: .25 }) });
+  document.querySelectorAll('#journeyList li, #sigList li, #quietLine, .consult h2').forEach(el=>{
+    animate(el, { opacity: [0, 1], y: [16, 0], duration: 1000, ease: 'out(3)',
+      autoplay: onScroll({ target: el, enter: 'bottom-=8% top', repeat: false }) });
+  });
+}
+</script>
+</body>
+</html>
